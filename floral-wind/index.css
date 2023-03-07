@@ -1,0 +1,36 @@
+html,
+body {
+	margin: 0;
+	height: 100%;
+	overflow: hidden;
+	background: #000;
+	user-select: none;
+	touch-action: none;
+	font-family: 'Times New Roman';
+}
+
+div {
+	position: absolute;
+	opacity: 1;
+	text-shadow: var(--color) 0 0 30px;
+	transform: translate(0, 0) scale(0) rotate(0);
+	animation: blow-away linear 1s var(--i) forwards, fade-away linear 1s var(--i) forwards;
+}
+
+@keyframes blow-away {
+	10% {
+		transform: translate(0, 0) scale(1) rotate(0);
+	}
+	100% {
+		transform: translate(var(--shiftX), var(--shiftY)) scale(0) rotate(1turn);
+	}
+}
+
+@keyframes face-away {
+	50% {
+		opacity: 1;
+	}
+	100% {
+		opacity: 0;
+	}
+}
